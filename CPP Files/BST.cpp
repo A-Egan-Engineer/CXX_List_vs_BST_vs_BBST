@@ -28,6 +28,10 @@ void BST::insert(Node *newNode) {
                 return;
             }
         }
+        else {
+            delete newNode;
+            return;
+        }
     }
 }
 
@@ -38,9 +42,9 @@ Node* BST::search(int data, bool showSearchPath) {
 
     Node* current = root;
 
-    while (current->data != data) {
-        if (current == nullptr) {
-            return nullptr;
+    while (current != nullptr) {
+        if (current->data == data) {
+            return current;
         }
 
         if (showSearchPath) {
