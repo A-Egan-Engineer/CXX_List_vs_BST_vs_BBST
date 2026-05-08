@@ -7,4 +7,6 @@ add_executable(CXX_List_vs_BST_vs_BBST main.cpp
         "CPP Files/BST.cpp"
         "Headers/BST.h"
         "CPP Files/Node.cpp"
-        "Headers/Node.h")
+        "Headers/Node.h"
+        "CPP Files/LinkedList.cpp"
+        "Headers/LinkedList.h")
