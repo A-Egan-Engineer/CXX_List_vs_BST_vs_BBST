@@ -1,8 +1,5 @@
 #include "../Headers/AVL.h"
-#include "../Headers/Node.h"
-#include <algorithm>
-#include <cstdio>
-#include <iostream>
+
 
 using namespace std;
 
@@ -105,11 +102,9 @@ Node* AVL::search(Node* node,int data, bool showSearchPath) {
         if (current->data == data) {
             return current;
         }
-
         if (showSearchPath) {
             cout << current->data << " " << endl;
         }
-
         if (data < current->data) {
             current = current->left;
         }

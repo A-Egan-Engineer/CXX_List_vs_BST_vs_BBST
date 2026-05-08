@@ -1,6 +1,10 @@
 #ifndef CXX_LIST_VS_BST_VS_BBST_AVL_H
 #define CXX_LIST_VS_BST_VS_BBST_AVL_H
 #include "../Headers/Node.h"
+#include "../Headers/Node.h"
+#include <algorithm>
+#include <cstdio>
+#include <iostream>
 
 class AVL {
 

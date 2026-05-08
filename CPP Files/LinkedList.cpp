@@ -1,5 +1,4 @@
 #include "../Headers/LinkedList.h"
-#include "../Headers/Node.h"
 
 int LinkedList::listCount(){
     int counter = 0;
