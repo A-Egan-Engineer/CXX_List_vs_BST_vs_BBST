@@ -30,105 +30,105 @@ void LinkedList::display() {
 
     Node* temp = head;
     while (temp != nullptr) {
-        cout << temp->data; // Prints data of current node
+        cout << temp->data;
         cout << endl;
-        temp = temp->next; // Jumps to next node address
+        temp = temp->next;
     }
     cout << endl;
 }
 
 void LinkedList::insertAtStart(int data) {
 
-    Node* newNode = new Node(data); // Creates a new node to be inserted into a list at beginning (new head)
-    newNode->next = head; // New node points to current head
-    head = newNode; // Updates head of list to store new head
+    Node* newNode = new Node(data);
+    newNode->next = head;
+    head = newNode;
 }
 
 void LinkedList::insertAtEnd(int data) {
 
-    if (head == nullptr) { // If list is empty
-        insertAtStart(data); // Insert node at beginning of list
-        return; // Early exit if list is empty and node inserted at beginning
+    if (head == nullptr) {
+        insertAtStart(data);
+        return;
     }
     Node* newNode = new Node(data);
     Node* temp = head;
-    while (temp->next != nullptr) { // Loops through list until end is reached
-        temp = temp->next; // Points to next node in list
+    while (temp->next != nullptr) {
+        temp = temp->next;
     }
-    temp->next = newNode; // Previous node points to new node
-    newNode->next = nullptr; // New tail node points to NULL
+    temp->next = newNode;
+    newNode->next = nullptr;
 }
 
 void LinkedList::insertAtPos(int data, int index) {
     Node* newNode = new Node(data);
     Node* temp = head;
     Node* previous = head;
-    for (int i = 0; i < index; i++) { // Loops through list until index is reached
-        previous = temp; // Previous node stored as temp
-        temp = temp->next; // temp becomes next node after new node insertion
+    for (int i = 0; i < index; i++) {
+        previous = temp;
+        temp = temp->next;
     }
-    newNode->next = temp; // New node set to point to next node
-    previous->next = newNode; // previous node set to point to
-    if (head == nullptr) { // If head is empty
-        insertAtStart(data); // Insert new node at start of list (head)
-        return; // Exits early when above if statement is condition is met
+    newNode->next = temp;
+    previous->next = newNode;
+    if (head == nullptr) {
+        insertAtStart(data);
+        return;
     }
-    if (index >= listCount()) { // If index is greate than or equal to node count
-        insertAtEnd(data); // Insert new node at end of list (tail)
+    if (index >= listCount()) {
+        insertAtEnd(data);
     }
 }
 
 void LinkedList::deleteAtStart() {
 
-    if (head == nullptr) { // If list is empty, deletes nothing by exiting early (safeguard)
+    if (head == nullptr) {
         return;
     }
-    Node* temp = head; // Sets temp as current head node
-    head = head->next; // Head moves to next position
-    delete temp; // Deletes previous head node
+    Node* temp = head;
+    head = head->next;
+    delete temp;
 }
 
 void LinkedList::deleteAtEnd() {
 
 
-    if (head == nullptr) { // If list is empty
-        return; // Exits early
+    if (head == nullptr) {
+        return;
     }
-    if (!head->next) { // If list consists of only one node
-        delete head; // Deletes last node
-        head = nullptr; // Head points to NULL
-        return; // Exit early
+    if (!head->next) {
+        delete head;
+        head = nullptr;
+        return;
     }
-    Node* temp = head; // Temp points to head
-    Node* previous = head; // Previous points to head
-    while (temp->next != nullptr) { // Iterates through list until end of list is reached
-        previous = temp; // Sets previous node to current node
-        temp = temp->next; // temp stores next node
+    Node* temp = head;
+    Node* previous = head;
+    while (temp->next != nullptr) {
+        previous = temp;
+        temp = temp->next;
     }
-    previous->next = nullptr; // New tail node points to NULL
-    delete temp; // Deletes old node at end of list
+    previous->next = nullptr;
+    delete temp;
 }
 void LinkedList::deleteAtPos(int index) {
 
     if (head == nullptr) {
         return;
     }
-    if (index == 0) { // If list consists of only one node
-        deleteAtStart(); // Delete from start of list
-        return; // Exit early as sole node deleted
+    if (index == 0) {
+        deleteAtStart();
+        return;
     }
-    if (index >= listCount() - 1) { // If index is greater than index of last node
-        deleteAtEnd(); // Delete end node
-        return; // Exit early once end node deleted
+    if (index >= listCount() - 1) {
+        deleteAtEnd();
+        return;
     }
     Node* temp = head;
     Node* previous = head;
-    for (int i = 0; i < index; i++) { // Loops through list until index is reached
-        previous = temp; // Previous node stored as temp
-        temp = temp->next; // temp becomes next node after new node insertion
+    for (int i = 0; i < index; i++) {
+        previous = temp;
+        temp = temp->next;
     }
-    previous->next = temp->next; // previous node set to point to next node, after node that is being deleted
-    delete temp; // Deletes node at position of index
+    previous->next = temp->next;
+    delete temp;
 
 
 }

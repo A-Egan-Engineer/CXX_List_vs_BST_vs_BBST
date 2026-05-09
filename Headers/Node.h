@@ -2,6 +2,7 @@
 #define CXX_LIST_VS_BST_VS_BBST_NODE_H
 
 class Node {
+
 public:
     int data;
     Node* next;
