@@ -6,6 +6,9 @@
 #include <cstdio>
 #include <iostream>
 
+// Adelson-Velsky Landis balancing binary search tree class.
+// This header initialises the variables and methods for
+// AVL.cpp file
 class AVL {
 
     public:

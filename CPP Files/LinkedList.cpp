@@ -1,5 +1,7 @@
 #include "../Headers/LinkedList.h"
 
+// Iterates through the list, adding one to counter
+// until list is exhausted (tail->null).
 int LinkedList::listCount(){
     int counter = 0;
     Node* temp = head;
@@ -11,6 +13,10 @@ int LinkedList::listCount(){
     return counter;
 }
 
+// Iterates through the list until the value stored in
+// the key variable is found and prints the key and index
+// key is found at. If key value is not found in list, it
+// returns 0.
 int LinkedList::searchList(int key) {
 
     Node* temp = head;
@@ -23,9 +29,11 @@ int LinkedList::searchList(int key) {
         temp = temp->next;
         index++;
     }
-    return -1;
+    return 0;
 }
 
+// Iterates through list and prints data in list,
+// until list is exhausted.
 void LinkedList::display() {
 
     Node* temp = head;
@@ -37,6 +45,7 @@ void LinkedList::display() {
     cout << endl;
 }
 
+// Insertion of node at the start of the list.
 void LinkedList::insertAtStart(int data) {
 
     Node* newNode = new Node(data);
@@ -44,6 +53,7 @@ void LinkedList::insertAtStart(int data) {
     head = newNode;
 }
 
+// Insertion of node at the end of the list.
 void LinkedList::insertAtEnd(int data) {
 
     if (head == nullptr) {
@@ -59,6 +69,7 @@ void LinkedList::insertAtEnd(int data) {
     newNode->next = nullptr;
 }
 
+// Inserts node at a specified index within the list.
 void LinkedList::insertAtPos(int data, int index) {
     Node* newNode = new Node(data);
     Node* temp = head;
@@ -78,6 +89,7 @@ void LinkedList::insertAtPos(int data, int index) {
     }
 }
 
+// Deletes the head node, replaces head with index 1.
 void LinkedList::deleteAtStart() {
 
     if (head == nullptr) {
@@ -88,6 +100,8 @@ void LinkedList::deleteAtStart() {
     delete temp;
 }
 
+// Deletes the tail node, and node at tail -1 becomes
+// new tail node.
 void LinkedList::deleteAtEnd() {
 
 
@@ -108,6 +122,8 @@ void LinkedList::deleteAtEnd() {
     previous->next = nullptr;
     delete temp;
 }
+
+// Deletes a node at a specific index in the list.
 void LinkedList::deleteAtPos(int index) {
 
     if (head == nullptr) {

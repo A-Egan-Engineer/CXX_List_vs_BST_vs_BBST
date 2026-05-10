@@ -5,6 +5,9 @@
 #include "../Headers/Node.h"
 #include <iostream>
 
+// Binary search tree class, that can be initialised to
+// show the search path when looking for data included
+// in the tree.
 using namespace std;
 
 class BST {

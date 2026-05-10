@@ -2,14 +2,18 @@
 
 using namespace std;
 
+// Instantiates the data structures.
 Node* root = nullptr;
 LinkedList list1;
 BST bst1;
 AVL avl1;
 
+// Clock used to compare search times.
 typedef chrono::high_resolution_clock Clock;
 typedef chrono::milliseconds ms;
 
+// Populates all the structures with the same
+// values.
 void MainMenu::populateLists() {
 
     for (int i = 1; i <= 150000; i++) {
@@ -20,6 +24,10 @@ void MainMenu::populateLists() {
     }
 }
 
+// Allows user to search a specific number, executes
+// the search in all structures, while tracking time
+// taken for each search data structure. Gives final
+// times taken of each in milliseconds.
 void MainMenu::searchNumber() {
     int searchNumber;
 
@@ -74,6 +82,9 @@ void MainMenu::searchNumber() {
     cout << endl;
 }
 
+// Main menu functionality allows the user to
+// opt to search for an int in the data structures
+// or exit the program.
 void MainMenu::mainMenu() {
     int menuChoice;
 

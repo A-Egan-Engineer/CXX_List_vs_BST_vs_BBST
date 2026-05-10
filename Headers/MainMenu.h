@@ -10,6 +10,10 @@
 
 using namespace std;
 
+// Main menu class that houses the functionality of
+// the included structures. This allows main.cpp to
+// consist of constructing a main menu and calling
+// the menu function (2 lines of code).
 class MainMenu {
 
     public:

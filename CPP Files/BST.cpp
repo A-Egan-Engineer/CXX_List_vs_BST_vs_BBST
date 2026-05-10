@@ -2,6 +2,11 @@
 
 using namespace std;
 
+// Inserts a node as root if tree is empty.
+// Otherwise, the new node size is compared to
+// current left or right parent/child to find
+// correct location in structure. Deletes node
+// if another node in the list shares the same value.
 void BST::insert(Node *newNode) {
     if (root == nullptr) {
         root = newNode;
@@ -34,6 +39,11 @@ void BST::insert(Node *newNode) {
     }
 }
 
+// Allows the user to search the tree to find if a specific
+// integer is include in the tree. Traverses the tree based on
+// whether the number is smaller or larger the data stored in
+// the current node it is comparing with before moving to left/right
+// child.
 Node* BST::search(int data, bool showSearchPath) {
     if (root == nullptr) {
         return nullptr;

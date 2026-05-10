@@ -7,6 +7,11 @@
 
 using namespace std;
 
+//Linked list class, non-standard library list used
+// from assessment one (shows use for reusable source).
+// Kept all methods for additional functionality and
+//testing if ever revisiting this application for further
+// comparisons.
 class LinkedList {
 
 public:

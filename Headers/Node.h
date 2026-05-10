@@ -1,6 +1,9 @@
 #ifndef CXX_LIST_VS_BST_VS_BBST_NODE_H
 #define CXX_LIST_VS_BST_VS_BBST_NODE_H
 
+// Node Class used to create nodes across multiple data structures.
+// Does not require a .cpp file as everything is initialised in
+// the data structure classes.
 class Node {
 
 public:
